@@ -6,12 +6,13 @@ let pointsP2 = document.querySelector("#pointsP2");
 let pointsGlobalP1 = document.querySelector('#pointsGlobalP1');
 let pointsGlobalP2 = document.querySelector('#pointsGlobalP2');
 let votre = document.querySelector('#votre-dé');
+let nouvellePartie = document.querySelector('#buttonNouvellePartie');
 let immagine = document.querySelector("#immagine");
 
 votre.style.display = "none";
 
 function genererNombreEntier() {
-        return Math.floor(Math.random() * 6 + 1) 
+        return Math.floor(Math.random() * 6 + 2) 
 };
 
   function desBlock(nombreAleatoire) {
@@ -40,44 +41,29 @@ let resultatGlobalP2 = 0;
 
 buttonArret.addEventListener("click", () => {
     if (resultatsP1) {
+        pointsGlobalP1.style.display = "block";
         resultatGlobalP1 += resultatsP1deux
         pointsGlobalP1.textContent = "voici vos points globals " + resultatGlobalP1;
         resultatsP1deux = 0;
-        resultatsP1 = false;
+        if (resultatGlobalP1 >= 100) {
+            pointsGlobalP1.textContent = "felicitation vous avez gagné"
+        } else{
+            resultatsP1 = false;
+        }
     } else {
+        pointsGlobalP2.style.display = "block";
         resultatGlobalP2 += resultatsP2
         pointsGlobalP2.textContent = "voici vos points globals " + resultatGlobalP2;
         resultatsP2 = 0;
+        if (resultatGlobalP2 >= 100){
+            pointsGlobalP2.textContent = "felicitation vous avez gagné"
+        } else {
         resultatsP1 = true;
     }
-})
-
-// button.addEventListener("click", () => {
-// if (resultatsP1) {
-//         votre.style.display = 'block';
-//         nombreAleatoire = genererNombreEntier();
-//         desBlock(nombreAleatoire);
-//         resultatsP1deux = resultatsP1deux + nombreAleatoire
-//         pointsP1.textContent = "voici vos points " + resultatsP1deux ;
-//         console.log(nombreAleatoire);
-// } else {
-//         votre.style.display = 'block';
-//         nombreAleatoire = genererNombreEntier();
-//         desBlock(nombreAleatoire);
-//         resultatsP2 = resultatsP2 + nombreAleatoire
-//         pointsP2.textContent = "voici vos points " + resultatsP2 ;
-//         console.log(nombreAleatoire);
-// };
-// })
-
-
-
+}})
 
 button.addEventListener("click" , () => {
     if (resultatsP1) {
-        if (resultatGlobalP1 >= 100) {
-            pointsGlobalP1.textContent = "felicitation vous avez gagné"
-        } else {
             nombreAleatoire = genererNombreEntier();
                     votre.style.display = 'block';
                     desBlock(nombreAleatoire);
@@ -86,14 +72,11 @@ button.addEventListener("click" , () => {
                     resultatGlobalP1 = 0;
                     resultatsP1 = false;
                 } else {
+                    pointsP1.style.display = "block"
                     resultatsP1deux = resultatsP1deux + nombreAleatoire
                     pointsP1.textContent = "voici vos points " + resultatsP1deux ;
                     console.log(nombreAleatoire);
                 }
-        }
-    } else {
-        if (resultatGlobalP2 >= 100) {
-            pointsGlobalP2.textContent = "felicitation vous avez gagné"
         } else {
             nombreAleatoire = genererNombreEntier();
                     votre.style.display = 'block';
@@ -103,11 +86,20 @@ button.addEventListener("click" , () => {
                     resultatGlobalP2 = 0;
                     resultatsP1 = true;
                 } else {
-                    resultatsP2 = resultatsP2 + nombreAleatoire
+                    resultatsP2 = resultatsP2 + nombreAleatoire;
+                    pointsP2.style.display = "block"
                     pointsP2.textContent = "voici vos points " + resultatsP2 ;
                     console.log(nombreAleatoire);
                 };;        
-    }}});
+    }});
     
-
+nouvellePartie.addEventListener("click" , () => {
+    resultatGlobalP1 = 0;
+    resultatGlobalP2 = 0;
+    pointsGlobalP1.style.display = "none";
+    pointsGlobalP2.style.display = "none";
+    pointsP1.style.display = "none";
+    pointsP2.style.display = "none";
+    resultatsP1 = true;
+})
 
