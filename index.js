@@ -33,33 +33,81 @@ function genererNombreEntier() {
 let nombreAleatoire;
 let resultatsP1 = true;
 let resultatsP1deux = 0;
+let resultatGlobalP1 = 0;
 let resultatsP2 = 0 ;
+let resultatGlobalP2 = 0;
 
 
 buttonArret.addEventListener("click", () => {
     if (resultatsP1) {
-        pointsGlobalP1.textContent = "voici vos points globals " + resultatsP1deux;
-        resultatsP1 = false
+        resultatGlobalP1 += resultatsP1deux
+        pointsGlobalP1.textContent = "voici vos points globals " + resultatGlobalP1;
+        resultatsP1deux = 0;
+        resultatsP1 = false;
     } else {
-        pointsGlobalP2.textContent = "voici vos points globals " + resultatsP2;
-        resultatsP1 = true
+        resultatGlobalP2 += resultatsP2
+        pointsGlobalP2.textContent = "voici vos points globals " + resultatGlobalP2;
+        resultatsP2 = 0;
+        resultatsP1 = true;
     }
 })
 
-button.addEventListener("click", () => {
-if (resultatsP1) {
-        votre.style.display = 'block';
-        nombreAleatoire = genererNombreEntier();
-        desBlock(nombreAleatoire);
-        resultatsP1deux = resultatsP1deux + nombreAleatoire
-        pointsP1.textContent = "voici vos points " + resultatsP1deux ;
-        console.log(nombreAleatoire);
-} else {
-        votre.style.display = 'block';
-        nombreAleatoire = genererNombreEntier();
-        desBlock(nombreAleatoire);
-        resultatsP2 = resultatsP2 + nombreAleatoire
-        pointsP2.textContent = "voici vos points " + resultatsP2 ;
-        console.log(nombreAleatoire);
-};
-})
+// button.addEventListener("click", () => {
+// if (resultatsP1) {
+//         votre.style.display = 'block';
+//         nombreAleatoire = genererNombreEntier();
+//         desBlock(nombreAleatoire);
+//         resultatsP1deux = resultatsP1deux + nombreAleatoire
+//         pointsP1.textContent = "voici vos points " + resultatsP1deux ;
+//         console.log(nombreAleatoire);
+// } else {
+//         votre.style.display = 'block';
+//         nombreAleatoire = genererNombreEntier();
+//         desBlock(nombreAleatoire);
+//         resultatsP2 = resultatsP2 + nombreAleatoire
+//         pointsP2.textContent = "voici vos points " + resultatsP2 ;
+//         console.log(nombreAleatoire);
+// };
+// })
+
+
+
+
+button.addEventListener("click" , () => {
+    if (resultatsP1) {
+        if (resultatGlobalP1 >= 100) {
+            pointsGlobalP1.textContent = "felicitation vous avez gagné"
+        } else {
+            nombreAleatoire = genererNombreEntier();
+                    votre.style.display = 'block';
+                    desBlock(nombreAleatoire);
+                if (nombreAleatoire == 1) {
+                    pointsGlobalP1.textContent = "vous avez pzerdu"
+                    resultatGlobalP1 = 0;
+                    resultatsP1 = false;
+                } else {
+                    resultatsP1deux = resultatsP1deux + nombreAleatoire
+                    pointsP1.textContent = "voici vos points " + resultatsP1deux ;
+                    console.log(nombreAleatoire);
+                }
+        }
+    } else {
+        if (resultatGlobalP2 >= 100) {
+            pointsGlobalP2.textContent = "felicitation vous avez gagné"
+        } else {
+            nombreAleatoire = genererNombreEntier();
+                    votre.style.display = 'block';
+                    desBlock(nombreAleatoire);
+                if (nombreAleatoire == 1) {
+                    pointsGlobalP2.textContent = "vous avez perdu";
+                    resultatGlobalP2 = 0;
+                    resultatsP1 = true;
+                } else {
+                    resultatsP2 = resultatsP2 + nombreAleatoire
+                    pointsP2.textContent = "voici vos points " + resultatsP2 ;
+                    console.log(nombreAleatoire);
+                };;        
+    }}});
+    
+
+
