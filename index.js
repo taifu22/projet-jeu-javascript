@@ -101,5 +101,5 @@ nouvellePartie.addEventListener("click" , () => {
     pointsP1.style.display = "none";
     pointsP2.style.display = "none";
     resultatsP1 = true;
-})
+});
 
