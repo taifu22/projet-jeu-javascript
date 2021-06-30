@@ -33,7 +33,7 @@ let nombreAleatoire;
 let resultatsP1 = true;
 let resultatsP1deux = 0;
 let resultatGlobalP1 = 0;
-let resultatsP2 = 0 ;
+let resultatsP2 = 0;
 let resultatGlobalP2 = 0;
 
 
@@ -43,6 +43,7 @@ buttonArret.addEventListener("click", () => {
         resultatGlobalP1 += resultatsP1deux
         pointsGlobalP1.textContent =  resultatGlobalP1;
         resultatsP1deux = 0;
+        pointsP1.textContent = "0";
         if (resultatGlobalP1 >= 100) {
             pointsGlobalP1.textContent = "felicitation vous avez gagné"
         } else{
@@ -53,8 +54,10 @@ buttonArret.addEventListener("click", () => {
         resultatGlobalP2 += resultatsP2
         pointsGlobalP2.textContent =  resultatGlobalP2;
         resultatsP2 = 0;
+        pointsP2.textContent = "0";
         if (resultatGlobalP2 >= 100){
             pointsGlobalP2.textContent = "felicitation vous avez gagné"
+            win();
         } else {
         resultatsP1 = true;
     }
@@ -65,33 +68,35 @@ button.addEventListener("click" , () => {
             nombreAleatoire = genererNombreEntier();
                     desBlock(nombreAleatoire);
                 if (nombreAleatoire == 1) {
-                    pointsGlobalP1.textContent = "Game Over"
+                    pointsGlobalP1.textContent = resultatGlobalP1;
                     pointsP1.textContent = "0";
                     resultatsP1deux = 0;
-                    resultatGlobalP1 = 0;
                     resultatsP1 = false;
                 } else {
                         resultatsP1deux = resultatsP1deux + nombreAleatoire
-                        pointsP1.style.display = "block"
+                        // pointsP1.style.display = "block"
                         pointsP1.textContent =  resultatsP1deux ;   
         }} else {
             nombreAleatoire = genererNombreEntier();
                     desBlock(nombreAleatoire);
                 if (nombreAleatoire == 1) {
-                    pointsGlobalP2.textContent = "Game Over";
+                    pointsGlobalP2.textContent = resultatGlobalP2;
                     pointsP2.textContent = "0";
-                    pointsP2 = 0;
-                    resultatGlobalP2 = 0;
+                    resultatsP2 = 0;
                     resultatsP1 = true;
                 } else {
                         resultatsP2 = resultatsP2 + nombreAleatoire;
-                        pointsP2.style.display = "block"
+                        // pointsP2.style.display = "block"
                         pointsP2.textContent =  resultatsP2 ; 
                     
                 };;        
             }});
     
 nouvellePartie.addEventListener("click" , () => {
+    win()
+});
+
+function win() {
     resultatGlobalP1 = 0;
     resultatGlobalP2 = 0;
     resultatsP1deux = 0;
@@ -101,5 +106,4 @@ nouvellePartie.addEventListener("click" , () => {
     pointsGlobalP1.textContent = "0";
     pointsGlobalP2.textContent = "0";
     resultatsP1 = true;
-});
-
+};
