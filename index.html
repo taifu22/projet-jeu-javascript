@@ -4,21 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <title>Document</title>
 </head>
 <body>
-    <h1 id="player1">Player 1</h1>
-    <div id="pointsP1"></div>
-    <div id="pointsGlobalP1"></div>
-    <h1 id="player2">Player 2</h1>
-    <div id="pointsP2"></div>
-    <div id="pointsGlobalP2"></div>
-    <button id="button">Lancer le dé</button>
-    <button id="button-arret">arreter les points</button>
-    <button id="buttonNouvellePartie">Nouvelle partie</button>
-    <div id="votre-dé"> voici votre dé choisi</div>
-    <div id="immagine" ></div>
+    <div class="container-fluid">
+        <header class="col-12">
+        <div class="col-12 d-flex justify-content-center mt-3">
+            <button class="btn" id="buttonNouvellePartie">Nouvelle partie</button>
+          </div>
+        </header>
+        <div class="row d-flex justify-content-center">
+            <div class="col-4 d-flex justify-content-center">
+                <div class="player1-2 d-flex flex-column align-items-center">
+    <h1>Joueur 1</h1>
+    <div class="score1">
+        <p>Global Score</p>
+    <div class="score" id="pointsGlobalP1">0</div>
+    </div>
+    <div class="score2">
+        <p>Current Score</p>
+    <div class="score" id="pointsP1">0</div>
+    </div>
+    </div>
+    </div>
+             <div class="col-4 d-flex flex-column">
+    <div class="row justify-content-center">
+    <div class="d-flex align-items-center" id="immagine" ></div>
+        </div>
+    <div class="row justify-content-center">
+    <button class="btn" id="button">Lancer le dé</button>
+    </div>
+    <div class="row justify-content-center">
+    <button class="btn" id="button-arret">arreter les points</button>
+    </div>
+             </div>
+             <div class="col-4 d-flex justify-content-center">
+                 <div class="player1-2 d-flex flex-column align-items-center">
+    <h1>Joueur 2</h1>
+    <div class="score1">
+        <p>Global Score</p>
+    <div class="score" id="pointsGlobalP2">0</div>
+    </div>
+    <div class="score2">
+        <p>Current Score</p>
+    <div class="score" id="pointsP2">0</div>
+    </div>
+    </div>
+    </div>    
+</div>
     <script src="/index.js"></script>
 </body>
 </html>

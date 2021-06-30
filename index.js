@@ -9,25 +9,23 @@ let votre = document.querySelector('#votre-dé');
 let nouvellePartie = document.querySelector('#buttonNouvellePartie');
 let immagine = document.querySelector("#immagine");
 
-votre.style.display = "none";
-
 function genererNombreEntier() {
-        return Math.floor(Math.random() * 6 + 2) 
+        return Math.floor(Math.random() * 6 + 1) 
 };
 
   function desBlock(nombreAleatoire) {
         if (nombreAleatoire == 1) {
-            nombreAleatoire = immagine.innerHTML = "<img src=\"/images/dé 1.png\">";
+            nombreAleatoire = immagine.innerHTML = "<img style=\"height:200px; width:200px \" src=\"/images/dé 1.png\">";
          }else if (nombreAleatoire == 2) {
-             nombreAleatoire = immagine.innerHTML = "<img src=\"/images/dé 2.png\">";
+             nombreAleatoire = immagine.innerHTML = "<img style=\"height:200px; width:200px \" src=\"/images/dé 2.png\">";
          } else if (nombreAleatoire == 3) {
-             nombreAleatoire = immagine.innerHTML = "<img src=\"/images/dé 3.png\">";
+             nombreAleatoire = immagine.innerHTML = "<img style=\"height:200px; width:200px \" src=\"/images/dé 3.png\">";
          } else if (nombreAleatoire == 4) {
-             nombreAleatoire = immagine.innerHTML = "<img src=\"/images/dé 4.png\">";
+             nombreAleatoire = immagine.innerHTML = "<img style=\"height:200px; width:200px \" src=\"/images/dé 4.png\">";
          } else if (nombreAleatoire == 5) {
-             nombreAleatoire = immagine.innerHTML = "<img src=\"/images/dé 5.png\">";
+             nombreAleatoire = immagine.innerHTML = "<img style=\"height:200px; width:200px \" src=\"/images/dé 5.png\">";
          } else if (nombreAleatoire == 6) {
-             nombreAleatoire = immagine.innerHTML = "<img src=\"/images/dé 6.png\">";
+             nombreAleatoire = immagine.innerHTML = "<img style=\"height:200px; width:200px \" src=\"/images/dé 6.png\">";
          } 
 }
 
@@ -43,7 +41,7 @@ buttonArret.addEventListener("click", () => {
     if (resultatsP1) {
         pointsGlobalP1.style.display = "block";
         resultatGlobalP1 += resultatsP1deux
-        pointsGlobalP1.textContent = "voici vos points globals " + resultatGlobalP1;
+        pointsGlobalP1.textContent =  resultatGlobalP1;
         resultatsP1deux = 0;
         if (resultatGlobalP1 >= 100) {
             pointsGlobalP1.textContent = "felicitation vous avez gagné"
@@ -53,7 +51,7 @@ buttonArret.addEventListener("click", () => {
     } else {
         pointsGlobalP2.style.display = "block";
         resultatGlobalP2 += resultatsP2
-        pointsGlobalP2.textContent = "voici vos points globals " + resultatGlobalP2;
+        pointsGlobalP2.textContent =  resultatGlobalP2;
         resultatsP2 = 0;
         if (resultatGlobalP2 >= 100){
             pointsGlobalP2.textContent = "felicitation vous avez gagné"
@@ -65,41 +63,43 @@ buttonArret.addEventListener("click", () => {
 button.addEventListener("click" , () => {
     if (resultatsP1) {
             nombreAleatoire = genererNombreEntier();
-                    votre.style.display = 'block';
                     desBlock(nombreAleatoire);
                 if (nombreAleatoire == 1) {
-                    pointsGlobalP1.textContent = "vous avez pzerdu"
+                    pointsGlobalP1.textContent = "Game Over"
+                    pointsP1.textContent = "0";
+                    resultatsP1deux = 0;
                     resultatGlobalP1 = 0;
                     resultatsP1 = false;
                 } else {
-                    pointsP1.style.display = "block"
-                    resultatsP1deux = resultatsP1deux + nombreAleatoire
-                    pointsP1.textContent = "voici vos points " + resultatsP1deux ;
-                    console.log(nombreAleatoire);
-                }
-        } else {
+                        resultatsP1deux = resultatsP1deux + nombreAleatoire
+                        pointsP1.style.display = "block"
+                        pointsP1.textContent =  resultatsP1deux ;   
+        }} else {
             nombreAleatoire = genererNombreEntier();
-                    votre.style.display = 'block';
                     desBlock(nombreAleatoire);
                 if (nombreAleatoire == 1) {
-                    pointsGlobalP2.textContent = "vous avez perdu";
+                    pointsGlobalP2.textContent = "Game Over";
+                    pointsP2.textContent = "0";
+                    pointsP2 = 0;
                     resultatGlobalP2 = 0;
                     resultatsP1 = true;
                 } else {
-                    resultatsP2 = resultatsP2 + nombreAleatoire;
-                    pointsP2.style.display = "block"
-                    pointsP2.textContent = "voici vos points " + resultatsP2 ;
-                    console.log(nombreAleatoire);
+                        resultatsP2 = resultatsP2 + nombreAleatoire;
+                        pointsP2.style.display = "block"
+                        pointsP2.textContent =  resultatsP2 ; 
+                    
                 };;        
-    }});
+            }});
     
 nouvellePartie.addEventListener("click" , () => {
     resultatGlobalP1 = 0;
     resultatGlobalP2 = 0;
-    pointsGlobalP1.style.display = "none";
-    pointsGlobalP2.style.display = "none";
-    pointsP1.style.display = "none";
-    pointsP2.style.display = "none";
+    resultatsP1deux = 0;
+    resultatsP2 = 0;
+    pointsP2.textContent = "0";
+    pointsP1.textContent = "0";
+    pointsGlobalP1.textContent = "0";
+    pointsGlobalP2.textContent = "0";
     resultatsP1 = true;
 });
 
