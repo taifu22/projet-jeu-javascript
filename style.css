@@ -1,5 +1,3 @@
-
-
 .btn {
   background-color: #4d80e0;
   border: solid grey 1px;
@@ -21,9 +19,9 @@
 }
 
 @media screen and (max-width: 750px) {
-    #immagine {
-        height: 20px;
-    }
+  #immagine {
+    height: 0;
+  }
 }
 
 .player1-2 {
@@ -39,20 +37,21 @@
 }
 
 @media screen and (max-width: 750px) {
-    .player1-2 {
-        height: 350px;
-        width: 200;
-    }
+  .player1-2 {
+    height: 350px;
+    width: 200;
+  }
 }
- h1 {
-     display: none;
- }
+h1 {
+  display: none;
+}
 
- @media screen and (max-width: 750px) {
-    h1 {
-        display: flex;
-        justify-content: center;
-    }
+@media screen and (max-width: 750px) {
+  h1 {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
 }
 
 .score1 {
@@ -85,18 +84,18 @@ img {
 }
 
 @media screen and (max-width: 750px) {
-    img {
-        display: none;
-}
+  img {
+    display: none;
+  }
 }
 .image {
   height: 300px;
 }
 
 @media screen and (max-width: 750px) {
-    .image {
-        display: none;
-}
+  .image {
+    display: none;
+  }
 }
 .playerOff {
   background-color: rgb(207, 200, 200);
@@ -108,4 +107,10 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 750px) {
+  .playerOff {
+    height: 350px;
+    width: 200;
+  }
 }

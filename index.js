@@ -12,15 +12,15 @@ let player2 = document.querySelector("#player2");
 let globalScoreColor1 = document.querySelector("#globalScoreColor1");
 let globalScoreColor2 = document.querySelector("#globalScoreColor2");
 let currentScoreColor1 = document.querySelector("#currentScoreColor1");
-let currentScoreColor2 = document.querySelector("#currentScoreColor2"); 
+let currentScoreColor2 = document.querySelector("#currentScoreColor2");
 let image1Grise = document.querySelector("#image1Grise");
 let image2Grise = document.querySelector("#image2Grise");
-let newGame = document.querySelector('#newGame');
+let newGame = document.querySelector("#newGame");
 
 newGame.style.display = "none";
 
 function genererNombreEntier() {
-  return Math.floor(Math.random() * 6 + 2);
+  return Math.floor(Math.random() * 6 + 1);
 }
 
 function desBlock(nombreAleatoire) {
@@ -57,28 +57,31 @@ buttonArret.addEventListener("click", () => {
     player2.className = "player1-2";
     currentScoreColor2.style.color = "red";
     globalScoreColor2.style.color = "black";
-    image2Grise.innerHTML = '<img src="/images/Player2.png">'
+    image2Grise.innerHTML = '<img src="/images/Player2.png">';
     player1.className = "playerOff";
     globalScoreColor1.style.color = "rgb(133, 127, 127)";
     currentScoreColor1.style.color = "rgb(247, 130, 130)";
-    image1Grise.innerHTML = '<img src="/images/Player1-gris.png">'
+    image1Grise.innerHTML = '<img src="/images/Player1-gris.png">';
     pointsGlobalP1.style.display = "block";
     resultatGlobalP1 += resultatsP1deux;
     pointsGlobalP1.textContent = resultatGlobalP1;
     resultatsP1deux = 0;
     pointsP1.textContent = "0";
     if (resultatGlobalP1 >= 100) {
-      pointsGlobalP1.innerHTML = '<img style="height:150px; width:80px " src="/images/cup_winner.png">';
+      pointsGlobalP1.innerHTML =
+        '<img style="height:150px; width:80px " src="/images/cup_winner.png">' +
+        resultatGlobalP1 +
+        " win";
       pointsP1.style.display = "none";
       currentScoreColor1.style.display = "none";
-      button.style.display = 'none';
-      newGame.style.display = 'block';
-        newGame.addEventListener("click" , () => {
-            confirm("voulez-vous refaire une nouvelle partie?");
-            win();
-            newGame.style.display = "none";
-            button.style.display = 'block';
-        })
+      button.style.display = "none";
+      newGame.style.display = "block";
+      newGame.addEventListener("click", () => {
+        confirm("voulez-vous refaire une nouvelle partie?");
+        win();
+        newGame.style.display = "none";
+        button.style.display = "block";
+      });
     } else {
       resultatsP1 = false;
     }
@@ -86,81 +89,82 @@ buttonArret.addEventListener("click", () => {
     player1.className = "player1-2";
     currentScoreColor1.style.color = "red";
     globalScoreColor1.style.color = "black";
-    image1Grise.innerHTML = '<img src="/images/Player1.png">'
+    image1Grise.innerHTML = '<img src="/images/Player1.png">';
     player2.className = "playerOff";
     globalScoreColor2.style.color = "rgb(133, 127, 127)";
     currentScoreColor2.style.color = "rgb(247, 130, 130)";
-    image2Grise.innerHTML = '<img src="/images/Player2-gris.png">'
+    image2Grise.innerHTML = '<img src="/images/Player2-gris.png">';
     pointsGlobalP2.style.display = "block";
     resultatGlobalP2 += resultatsP2;
     pointsGlobalP2.textContent = resultatGlobalP2;
     resultatsP2 = 0;
     pointsP2.textContent = "0";
     if (resultatGlobalP2 >= 100) {
-      pointsGlobalP2.innerHTML = '<img style="height:150px; width:80px " src="/images/cup_winner.png">';
+      pointsGlobalP2.innerHTML =
+        '<img style="height:150px; width:80px " src="/images/cup_winner.png">' +
+        resultatGlobalP2 +
+        "win";
       pointsP2.style.display = "none";
       currentScoreColor2.style.display = "none";
-      button.style.display = 'none';
+      button.style.display = "none";
       newGame.style.display = "block";
-        newGame.addEventListener("click" , () => {
-            confirm("voulez-vous refaire une nouvelle partie?");
-            win();
-            newGame.style.display = "none";
-            button.style.display = 'block';
-          })  
+      newGame.addEventListener("click", () => {
+        confirm("voulez-vous refaire une nouvelle partie?");
+        win();
+        newGame.style.display = "none";
+        button.style.display = "block";
+      });
     } else {
       resultatsP1 = true;
     }
   }
 });
 
-    button.addEventListener("click", () => {
-        if (resultatsP1) {
-          nombreAleatoire = genererNombreEntier();
-          desBlock(nombreAleatoire);
-          if (nombreAleatoire == 1) {
-            pointsGlobalP1.textContent = resultatGlobalP1;
-            pointsP1.textContent = "0";
-            resultatsP1deux = 0;
-            resultatsP1 = false;
-          } else {
-            player1.className = "player1-2";
-            currentScoreColor1.style.color = "red";
-            globalScoreColor1.style.color = "black";
-            image1Grise.innerHTML = '<img src="/images/Player1.png">'
-            player2.className = "playerOff";
-            globalScoreColor2.style.color = "rgb(133, 127, 127)";
-            currentScoreColor2.style.color = "rgb(247, 130, 130)";
-            image2Grise.innerHTML = '<img src="/images/Player2-gris.png">'
-            resultatsP1deux = resultatsP1deux + nombreAleatoire;
-            // pointsP1.style.display = "block"
-            pointsP1.textContent = resultatsP1deux;
-          }
-        } else {
-          nombreAleatoire = genererNombreEntier();
-          desBlock(nombreAleatoire);
-          if (nombreAleatoire == 1) {
-            pointsGlobalP2.textContent = resultatGlobalP2;
-            pointsP2.textContent = "0";
-            resultatsP2 = 0;
-            resultatsP1 = true;
-          } else {
-            player2.className = "player1-2";
-            currentScoreColor2.style.color = "red";
-            globalScoreColor2.style.color = "black";
-            image2Grise.innerHTML = '<img src="/images/Player2.png">'
-            player1.className = "playerOff";
-            globalScoreColor1.style.color = "rgb(133, 127, 127)";
-            currentScoreColor1.style.color = "rgb(247, 130, 130)";
-            image1Grise.innerHTML = '<img src="/images/Player1-gris.png">'
-            resultatsP2 = resultatsP2 + nombreAleatoire;
-            // pointsP2.style.display = "block"
-            pointsP2.textContent = resultatsP2;
-          }
-        }
-      });
-
-
+button.addEventListener("click", () => {
+  if (resultatsP1) {
+    nombreAleatoire = genererNombreEntier();
+    desBlock(nombreAleatoire);
+    if (nombreAleatoire == 1) {
+      pointsGlobalP1.textContent = resultatGlobalP1;
+      pointsP1.textContent = "0";
+      resultatsP1deux = 0;
+      resultatsP1 = false;
+    } else {
+      player1.className = "player1-2";
+      currentScoreColor1.style.color = "red";
+      globalScoreColor1.style.color = "black";
+      image1Grise.innerHTML = '<img src="/images/Player1.png">';
+      player2.className = "playerOff";
+      globalScoreColor2.style.color = "rgb(133, 127, 127)";
+      currentScoreColor2.style.color = "rgb(247, 130, 130)";
+      image2Grise.innerHTML = '<img src="/images/Player2-gris.png">';
+      resultatsP1deux = resultatsP1deux + nombreAleatoire;
+      // pointsP1.style.display = "block"
+      pointsP1.textContent = resultatsP1deux;
+    }
+  } else {
+    nombreAleatoire = genererNombreEntier();
+    desBlock(nombreAleatoire);
+    if (nombreAleatoire == 1) {
+      pointsGlobalP2.textContent = resultatGlobalP2;
+      pointsP2.textContent = "0";
+      resultatsP2 = 0;
+      resultatsP1 = true;
+    } else {
+      player2.className = "player1-2";
+      currentScoreColor2.style.color = "red";
+      globalScoreColor2.style.color = "black";
+      image2Grise.innerHTML = '<img src="/images/Player2.png">';
+      player1.className = "playerOff";
+      globalScoreColor1.style.color = "rgb(133, 127, 127)";
+      currentScoreColor1.style.color = "rgb(247, 130, 130)";
+      image1Grise.innerHTML = '<img src="/images/Player1-gris.png">';
+      resultatsP2 = resultatsP2 + nombreAleatoire;
+      // pointsP2.style.display = "block"
+      pointsP2.textContent = resultatsP2;
+    }
+  }
+});
 
 nouvellePartie.addEventListener("click", () => {
   win();
@@ -174,19 +178,19 @@ function win() {
   player2.className = "player1-2";
   currentScoreColor2.style.color = "red";
   globalScoreColor2.style.color = "black";
-  image2Grise.innerHTML = '<img src="/images/Player2.png">'
+  image2Grise.innerHTML = '<img src="/images/Player2.png">';
   player1.className = "player1-2";
   currentScoreColor1.style.color = "red";
   globalScoreColor1.style.color = "black";
-  image1Grise.innerHTML = '<img src="/images/Player1.png">'
+  image1Grise.innerHTML = '<img src="/images/Player1.png">';
   pointsP2.textContent = "0";
   pointsP1.textContent = "0";
   pointsGlobalP1.textContent = "0";
   pointsGlobalP2.textContent = "0";
-  pointsP1.style.display = 'flex';
-  currentScoreColor1.style.display = 'flex';
-  pointsP2.style.display = 'flex';
-  currentScoreColor2.style.display = 'flex';
+  pointsP1.style.display = "flex";
+  currentScoreColor1.style.display = "flex";
+  pointsP2.style.display = "flex";
+  currentScoreColor2.style.display = "flex";
   pointsP2.className = "score2 - score";
   currentScoreColor2.className = "score2";
   pointsP1.className = "score2 - score";
