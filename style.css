@@ -19,6 +19,13 @@
 #immagine {
   height: 500px;
 }
+
+@media screen and (max-width: 750px) {
+    #immagine {
+        height: 20px;
+    }
+}
+
 .player1-2 {
   background: linear-gradient(45deg, rgb(117, 207, 117), rgb(127, 223, 230));
   height: 650px;
@@ -29,6 +36,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+    .player1-2 {
+        height: 350px;
+        width: 200;
+    }
+}
+ h1 {
+     display: none;
+ }
+
+ @media screen and (max-width: 750px) {
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .score1 {
@@ -59,10 +83,21 @@ img {
   width: 175px;
   margin-top: 25px;
 }
+
+@media screen and (max-width: 750px) {
+    img {
+        display: none;
+}
+}
 .image {
   height: 300px;
 }
 
+@media screen and (max-width: 750px) {
+    .image {
+        display: none;
+}
+}
 .playerOff {
   background-color: rgb(207, 200, 200);
   height: 650px;
