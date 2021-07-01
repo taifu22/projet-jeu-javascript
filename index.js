@@ -20,7 +20,7 @@ let newGame = document.querySelector("#newGame");
 newGame.style.display = "none";
 
 function genererNombreEntier() {
-  return Math.floor(Math.random() * 6 + 2);
+  return Math.floor(Math.random() * 6 + 1);
 }
 
 function desBlock(nombreAleatoire) {
