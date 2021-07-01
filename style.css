@@ -1,79 +1,76 @@
-/* body {
-    background-image: url(/images/c1bf7b0954eb41e62e4b2866cdd14880.jpg);
-    background-position:100% 100% 100% 100%
-}; */
+
 
 .btn {
-    background-color:#4d80e0;
-    border: solid grey 1px;
-    border-radius: 20px 20px 20px 20px;
-    width: 250px;
-    height: 65px;
-    transition: all 0.5s;
-    color: white;
-    margin: 10px
-  }
-  
-  .btn:hover {
-    background: linear-gradient(95deg, white, #4d80e0);
-    color: black;
-    transition: background-color 0.5s;
-  }
-  #immagine {
-      height: 500px;
-  }
+  background-color: #4d80e0;
+  border: solid grey 1px;
+  border-radius: 20px 20px 20px 20px;
+  width: 250px;
+  height: 65px;
+  transition: all 0.5s;
+  color: white;
+  margin: 10px;
+}
+
+.btn:hover {
+  background: linear-gradient(95deg, white, #4d80e0);
+  color: black;
+  transition: background-color 0.5s;
+}
+#immagine {
+  height: 500px;
+}
 .player1-2 {
-    background: linear-gradient(45deg, rgb(117, 207, 117), rgb(127, 223, 230));
-    height: 650px;
-    width: 400px;
-    border: grey solid 1px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background: linear-gradient(45deg, rgb(117, 207, 117), rgb(127, 223, 230));
+  height: 650px;
+  width: 400px;
+  border: grey solid 1px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .score1 {
-    width: 300px;
-    height: 150px;
-    color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 300px;
+  height: 150px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .score2 {
-    width: 300px;
-    height: 150px;
-    color:red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 300px;
+  height: 150px;
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 p {
-    font-size: 25px;
+  font-size: 25px;
 }
 .score {
-    font-size: 50px;
-    font-weight: bold;
+  font-size: 50px;
+  font-weight: bold;
 }
 img {
-    height: 200px;
-    width: 175px;
-    margin-top: 25px;
+  height: 200px;
+  width: 175px;
+  margin-top: 25px;
 }
 .image {
-    height: 300px;
+  height: 300px;
 }
 
 .playerOff {
-    background-color: rgb(207, 200, 200);
-    height: 650px;
-    width: 400px;
-    border: grey solid 1px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} 
+  background-color: rgb(207, 200, 200);
+  height: 650px;
+  width: 400px;
+  border: grey solid 1px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
