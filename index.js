@@ -20,7 +20,7 @@ let newGame = document.querySelector("#newGame");
 newGame.style.display = "none";
 
 function genererNombreEntier() {
-  return Math.floor(Math.random() * 6 + 1);
+  return Math.floor(Math.random() * 6 + 2);
 }
 
 function desBlock(nombreAleatoire) {
@@ -70,7 +70,7 @@ buttonArret.addEventListener("click", () => {
     if (resultatGlobalP1 >= 100) {
       pointsGlobalP1.innerHTML =
         '<img style="height:150px; width:80px " src="images/cup_winner.png">' +
-        resultatGlobalP1 +
+        resultatGlobalP1 + 
         " win";
       pointsP1.style.display = "none";
       currentScoreColor1.style.display = "none";
@@ -102,8 +102,8 @@ buttonArret.addEventListener("click", () => {
     if (resultatGlobalP2 >= 100) {
       pointsGlobalP2.innerHTML =
         '<img style="height:150px; width:80px " src="images/cup_winner.png">' +
-        resultatGlobalP2 +
-        "win";
+        resultatGlobalP2 + 
+        " win";
       pointsP2.style.display = "none";
       currentScoreColor2.style.display = "none";
       button.style.display = "none";
