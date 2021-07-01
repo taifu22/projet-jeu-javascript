@@ -16,6 +16,10 @@ let currentScoreColor2 = document.querySelector("#currentScoreColor2");
 let image1Grise = document.querySelector("#image1Grise");
 let image2Grise = document.querySelector("#image2Grise");
 let newGame = document.querySelector("#newGame");
+let audioDice = new Audio("audio/Sound_Dice sound.mp3");
+let audioLoser = new Audio("/audio/Sound_loosersound.wav");
+let audioHold = new Audio("/audio/Sound_holdsong.mp3");
+let audioVictory = new Audio("/audio/victoryff.swf.mp3");
 
 newGame.style.display = "none";
 
@@ -54,6 +58,7 @@ let resultatGlobalP2 = 0;
 
 buttonArret.addEventListener("click", () => {
   if (resultatsP1) {
+    audioHold.play();
     player2.className = "player1-2";
     currentScoreColor2.style.color = "red";
     globalScoreColor2.style.color = "black";
@@ -68,6 +73,7 @@ buttonArret.addEventListener("click", () => {
     resultatsP1deux = 0;
     pointsP1.textContent = "0";
     if (resultatGlobalP1 >= 100) {
+      audioVictory.play();
       pointsGlobalP1.innerHTML =
         '<img style="height:150px; width:80px " src="images/cup_winner.png">' +
         resultatGlobalP1 + 
@@ -86,6 +92,7 @@ buttonArret.addEventListener("click", () => {
       resultatsP1 = false;
     }
   } else {
+    audioHold.play();
     player1.className = "player1-2";
     currentScoreColor1.style.color = "red";
     globalScoreColor1.style.color = "black";
@@ -100,6 +107,7 @@ buttonArret.addEventListener("click", () => {
     resultatsP2 = 0;
     pointsP2.textContent = "0";
     if (resultatGlobalP2 >= 100) {
+      audioVictory.play();
       pointsGlobalP2.innerHTML =
         '<img style="height:150px; width:80px " src="images/cup_winner.png">' +
         resultatGlobalP2 + 
@@ -125,11 +133,13 @@ button.addEventListener("click", () => {
     nombreAleatoire = genererNombreEntier();
     desBlock(nombreAleatoire);
     if (nombreAleatoire == 1) {
+      audioLoser.play();
       pointsGlobalP1.textContent = resultatGlobalP1;
       pointsP1.textContent = "0";
       resultatsP1deux = 0;
       resultatsP1 = false;
     } else {
+      audioDice.play();
       player1.className = "player1-2";
       currentScoreColor1.style.color = "red";
       globalScoreColor1.style.color = "black";
@@ -146,11 +156,13 @@ button.addEventListener("click", () => {
     nombreAleatoire = genererNombreEntier();
     desBlock(nombreAleatoire);
     if (nombreAleatoire == 1) {
+      audioLoser.play();
       pointsGlobalP2.textContent = resultatGlobalP2;
       pointsP2.textContent = "0";
       resultatsP2 = 0;
       resultatsP1 = true;
     } else {
+      audioDice.play();
       player2.className = "player1-2";
       currentScoreColor2.style.color = "red";
       globalScoreColor2.style.color = "black";
