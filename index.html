@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/style.css" type="text/css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description du jeux" content="Le jeu comprend 2 joueurs sur un seul et même écran. 
+  Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).
+  À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le 
+  résultat d’un lancer est ajouté au ROUND. 
+  Lors de son tour, le joueur peut décider à tout moment de:
+  - Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le
+  tour de l’autre joueur.
+  - Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.
+  Le premier joueur qui atteint les 100 points sur global gagne le jeu" />
+  <link rel="icon" href="assets/iconsite.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <meta name="robots" content="index,follow,noimageindex">
+  <link rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css" type="text/css">
+  <title>Jeux des dés</title>
 </head>
 <body> 
     <div class="container-fluid">
