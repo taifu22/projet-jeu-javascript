@@ -17,9 +17,9 @@ let image1Grise = document.querySelector("#image1Grise");
 let image2Grise = document.querySelector("#image2Grise");
 let newGame = document.querySelector("#newGame");
 let audioDice = new Audio("audio/Sound_Dice sound.mp3");
-let audioLoser = new Audio("/audio/Sound_loosersound.wav");
-let audioHold = new Audio("/audio/Sound_holdsong.mp3");
-let audioVictory = new Audio("/audio/victoryff.swf.mp3");
+let audioLoser = new Audio("audio/Sound_loosersound.wav");
+let audioHold = new Audio("audio/Sound_holdsong.mp3");
+let audioVictory = new Audio("audio/victoryff.swf.mp3");
 
 newGame.style.display = "none";
 
