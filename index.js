@@ -57,11 +57,11 @@ buttonArret.addEventListener("click", () => {
     player2.className = "player1-2";
     currentScoreColor2.style.color = "red";
     globalScoreColor2.style.color = "black";
-    image2Grise.innerHTML = '<img src="/images/Player2.png">';
+    image2Grise.innerHTML = '<img src="images/Player2.png">';
     player1.className = "playerOff";
     globalScoreColor1.style.color = "rgb(133, 127, 127)";
     currentScoreColor1.style.color = "rgb(247, 130, 130)";
-    image1Grise.innerHTML = '<img src="/images/Player1-gris.png">';
+    image1Grise.innerHTML = '<img src="images/Player1-gris.png">';
     pointsGlobalP1.style.display = "block";
     resultatGlobalP1 += resultatsP1deux;
     pointsGlobalP1.textContent = resultatGlobalP1;
