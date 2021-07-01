@@ -26,22 +26,22 @@ function genererNombreEntier() {
 function desBlock(nombreAleatoire) {
   if (nombreAleatoire == 1) {
     nombreAleatoire = immagine.innerHTML =
-      '<img style="height:200px; width:200px " src="/images/dé 1.png">';
+      '<img style="height:200px; width:200px " src="images/dé 1.png">';
   } else if (nombreAleatoire == 2) {
     nombreAleatoire = immagine.innerHTML =
-      '<img style="height:200px; width:200px " src="/images/dé 2.png">';
+      '<img style="height:200px; width:200px " src="images/dé 2.png">';
   } else if (nombreAleatoire == 3) {
     nombreAleatoire = immagine.innerHTML =
-      '<img style="height:200px; width:200px " src="/images/dé 3.png">';
+      '<img style="height:200px; width:200px " src="images/dé 3.png">';
   } else if (nombreAleatoire == 4) {
     nombreAleatoire = immagine.innerHTML =
-      '<img style="height:200px; width:200px " src="/images/dé 4.png">';
+      '<img style="height:200px; width:200px " src="images/dé 4.png">';
   } else if (nombreAleatoire == 5) {
     nombreAleatoire = immagine.innerHTML =
-      '<img style="height:200px; width:200px " src="/images/dé 5.png">';
+      '<img style="height:200px; width:200px " src="images/dé 5.png">';
   } else if (nombreAleatoire == 6) {
     nombreAleatoire = immagine.innerHTML =
-      '<img style="height:200px; width:200px " src="/images/dé 6.png">';
+      '<img style="height:200px; width:200px " src="images/dé 6.png">';
   }
 }
 
@@ -69,7 +69,7 @@ buttonArret.addEventListener("click", () => {
     pointsP1.textContent = "0";
     if (resultatGlobalP1 >= 100) {
       pointsGlobalP1.innerHTML =
-        '<img style="height:150px; width:80px " src="/images/cup_winner.png">' +
+        '<img style="height:150px; width:80px " src="images/cup_winner.png">' +
         resultatGlobalP1 +
         " win";
       pointsP1.style.display = "none";
@@ -89,11 +89,11 @@ buttonArret.addEventListener("click", () => {
     player1.className = "player1-2";
     currentScoreColor1.style.color = "red";
     globalScoreColor1.style.color = "black";
-    image1Grise.innerHTML = '<img src="/images/Player1.png">';
+    image1Grise.innerHTML = '<img src="images/Player1.png">';
     player2.className = "playerOff";
     globalScoreColor2.style.color = "rgb(133, 127, 127)";
     currentScoreColor2.style.color = "rgb(247, 130, 130)";
-    image2Grise.innerHTML = '<img src="/images/Player2-gris.png">';
+    image2Grise.innerHTML = '<img src="images/Player2-gris.png">';
     pointsGlobalP2.style.display = "block";
     resultatGlobalP2 += resultatsP2;
     pointsGlobalP2.textContent = resultatGlobalP2;
@@ -101,7 +101,7 @@ buttonArret.addEventListener("click", () => {
     pointsP2.textContent = "0";
     if (resultatGlobalP2 >= 100) {
       pointsGlobalP2.innerHTML =
-        '<img style="height:150px; width:80px " src="/images/cup_winner.png">' +
+        '<img style="height:150px; width:80px " src="images/cup_winner.png">' +
         resultatGlobalP2 +
         "win";
       pointsP2.style.display = "none";
@@ -133,11 +133,11 @@ button.addEventListener("click", () => {
       player1.className = "player1-2";
       currentScoreColor1.style.color = "red";
       globalScoreColor1.style.color = "black";
-      image1Grise.innerHTML = '<img src="/images/Player1.png">';
+      image1Grise.innerHTML = '<img src="images/Player1.png">';
       player2.className = "playerOff";
       globalScoreColor2.style.color = "rgb(133, 127, 127)";
       currentScoreColor2.style.color = "rgb(247, 130, 130)";
-      image2Grise.innerHTML = '<img src="/images/Player2-gris.png">';
+      image2Grise.innerHTML = '<img src="images/Player2-gris.png">';
       resultatsP1deux = resultatsP1deux + nombreAleatoire;
       // pointsP1.style.display = "block"
       pointsP1.textContent = resultatsP1deux;
@@ -154,11 +154,11 @@ button.addEventListener("click", () => {
       player2.className = "player1-2";
       currentScoreColor2.style.color = "red";
       globalScoreColor2.style.color = "black";
-      image2Grise.innerHTML = '<img src="/images/Player2.png">';
+      image2Grise.innerHTML = '<img src="images/Player2.png">';
       player1.className = "playerOff";
       globalScoreColor1.style.color = "rgb(133, 127, 127)";
       currentScoreColor1.style.color = "rgb(247, 130, 130)";
-      image1Grise.innerHTML = '<img src="/images/Player1-gris.png">';
+      image1Grise.innerHTML = '<img src="images/Player1-gris.png">';
       resultatsP2 = resultatsP2 + nombreAleatoire;
       // pointsP2.style.display = "block"
       pointsP2.textContent = resultatsP2;
@@ -178,11 +178,11 @@ function win() {
   player2.className = "player1-2";
   currentScoreColor2.style.color = "red";
   globalScoreColor2.style.color = "black";
-  image2Grise.innerHTML = '<img src="/images/Player2.png">';
+  image2Grise.innerHTML = '<img src="images/Player2.png">';
   player1.className = "player1-2";
   currentScoreColor1.style.color = "red";
   globalScoreColor1.style.color = "black";
-  image1Grise.innerHTML = '<img src="/images/Player1.png">';
+  image1Grise.innerHTML = '<img src="images/Player1.png">';
   pointsP2.textContent = "0";
   pointsP1.textContent = "0";
   pointsGlobalP1.textContent = "0";
