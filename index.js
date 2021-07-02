@@ -131,8 +131,13 @@ buttonArret.addEventListener("click", () => {
 button.addEventListener("click", () => {
   if (resultatsP1) {
     nombreAleatoire = genererNombreEntier();
+<<<<<<< HEAD
     desBlock(nombreAleatoire);
     if (nombreAleatoire == 1) {
+=======
+    if (nombreAleatoire == 1) {
+      desBlock(nombreAleatoire);
+>>>>>>> c0917f2 (derniere touche finale)
       audioLoser.play();
       pointsGlobalP1.textContent = resultatGlobalP1;
       pointsP1.textContent = "0";
@@ -140,6 +145,11 @@ button.addEventListener("click", () => {
       resultatsP1 = false;
     } else {
       audioDice.play();
+<<<<<<< HEAD
+=======
+      setTimeout(() => {
+      desBlock(nombreAleatoire);
+>>>>>>> c0917f2 (derniere touche finale)
       player1.className = "player1-2";
       currentScoreColor1.style.color = "red";
       globalScoreColor1.style.color = "black";
@@ -151,16 +161,26 @@ button.addEventListener("click", () => {
       resultatsP1deux = resultatsP1deux + nombreAleatoire;
       // pointsP1.style.display = "block"
       pointsP1.textContent = resultatsP1deux;
+<<<<<<< HEAD
     }
   } else {
     nombreAleatoire = genererNombreEntier();
     desBlock(nombreAleatoire);
     if (nombreAleatoire == 1) {
+=======
+      }, 1000);
+    }
+  } else {
+    nombreAleatoire = genererNombreEntier();
+    if (nombreAleatoire == 1) {
+      desBlock(nombreAleatoire);
+>>>>>>> c0917f2 (derniere touche finale)
       audioLoser.play();
       pointsGlobalP2.textContent = resultatGlobalP2;
       pointsP2.textContent = "0";
       resultatsP2 = 0;
       resultatsP1 = true;
+<<<<<<< HEAD
     } else {
       audioDice.play();
       player2.className = "player1-2";
@@ -174,6 +194,25 @@ button.addEventListener("click", () => {
       resultatsP2 = resultatsP2 + nombreAleatoire;
       // pointsP2.style.display = "block"
       pointsP2.textContent = resultatsP2;
+=======
+     
+      
+    } else {
+      audioDice.play();
+      setTimeout(() => {
+        desBlock(nombreAleatoire);
+        player2.className = "player1-2";
+        currentScoreColor2.style.color = "red";
+        globalScoreColor2.style.color = "black";
+        image2Grise.innerHTML = '<img src="images/Player2.png">';
+        player1.className = "playerOff";
+        globalScoreColor1.style.color = "rgb(133, 127, 127)";
+        currentScoreColor1.style.color = "rgb(247, 130, 130)";
+        image1Grise.innerHTML = '<img src="images/Player1-gris.png">';
+        resultatsP2 = resultatsP2 + nombreAleatoire;
+        pointsP2.textContent = resultatsP2;  
+      }, 1000);
+>>>>>>> c0917f2 (derniere touche finale)
     }
   }
 });
@@ -203,9 +242,13 @@ function win() {
   currentScoreColor1.style.display = "flex";
   pointsP2.style.display = "flex";
   currentScoreColor2.style.display = "flex";
+<<<<<<< HEAD
   pointsP2.className = "score2 - score";
   currentScoreColor2.className = "score2";
   pointsP1.className = "score2 - score";
+=======
+  currentScoreColor2.className = "score2";
+>>>>>>> c0917f2 (derniere touche finale)
   currentScoreColor1.className = "score2";
   resultatsP1 = true;
 }
