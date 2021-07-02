@@ -131,31 +131,33 @@ buttonArret.addEventListener("click", () => {
 button.addEventListener("click", () => {
   if (resultatsP1) {
     nombreAleatoire = genererNombreEntier();
-    desBlock(nombreAleatoire);
     if (nombreAleatoire == 1) {
       audioLoser.play();
+      desBlock(nombreAleatoire);
       pointsGlobalP1.textContent = resultatGlobalP1;
       pointsP1.textContent = "0";
       resultatsP1deux = 0;
       resultatsP1 = false;
     } else {
       audioDice.play();
-      player1.className = "player1-2";
-      currentScoreColor1.style.color = "red";
-      globalScoreColor1.style.color = "black";
-      image1Grise.innerHTML = '<img src="images/Player1.png">';
-      player2.className = "playerOff";
-      globalScoreColor2.style.color = "rgb(133, 127, 127)";
-      currentScoreColor2.style.color = "rgb(247, 130, 130)";
-      image2Grise.innerHTML = '<img src="images/Player2-gris.png">';
-      resultatsP1deux = resultatsP1deux + nombreAleatoire;
-      // pointsP1.style.display = "block"
-      pointsP1.textContent = resultatsP1deux;
+      setTimeout(() => {
+        desBlock(nombreAleatoire);
+        player1.className = "player1-2";
+        currentScoreColor1.style.color = "red";
+        globalScoreColor1.style.color = "black";
+        image1Grise.innerHTML = '<img src="images/Player1.png">';
+        player2.className = "playerOff";
+        globalScoreColor2.style.color = "rgb(133, 127, 127)";
+        currentScoreColor2.style.color = "rgb(247, 130, 130)";
+        image2Grise.innerHTML = '<img src="images/Player2-gris.png">';
+        resultatsP1deux = resultatsP1deux + nombreAleatoire;
+        pointsP1.textContent = resultatsP1deux;  
+      }, 1000);      
     }
   } else {
     nombreAleatoire = genererNombreEntier();
-    desBlock(nombreAleatoire);
     if (nombreAleatoire == 1) {
+      desBlock(nombreAleatoire);
       audioLoser.play();
       pointsGlobalP2.textContent = resultatGlobalP2;
       pointsP2.textContent = "0";
@@ -163,6 +165,8 @@ button.addEventListener("click", () => {
       resultatsP1 = true;
     } else {
       audioDice.play();
+      setTimeout(() => {
+      desBlock(nombreAleatoire);
       player2.className = "player1-2";
       currentScoreColor2.style.color = "red";
       globalScoreColor2.style.color = "black";
@@ -174,6 +178,7 @@ button.addEventListener("click", () => {
       resultatsP2 = resultatsP2 + nombreAleatoire;
       // pointsP2.style.display = "block"
       pointsP2.textContent = resultatsP2;
+      }, 1000);
     }
   }
 });
@@ -203,9 +208,7 @@ function win() {
   currentScoreColor1.style.display = "flex";
   pointsP2.style.display = "flex";
   currentScoreColor2.style.display = "flex";
-  pointsP2.className = "score2 - score";
   currentScoreColor2.className = "score2";
-  pointsP1.className = "score2 - score";
   currentScoreColor1.className = "score2";
   resultatsP1 = true;
 }
